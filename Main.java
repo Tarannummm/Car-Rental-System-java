@@ -40,7 +40,19 @@ class Car{
     }
 }
 class Customer{
+    private String customerId;
+    private String name;
+    public Customer( String CustomerId, String CustomerName){
+        this.customerId=CustomerId;
+        this.name=CustomerName;
+    }
 
+    public String getCustomerId(){
+        return customerId;
+    }
+    public String getName(){
+        return name;
+    }
 }
 class Rental{
 
