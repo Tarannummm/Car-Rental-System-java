@@ -126,5 +126,33 @@ class CarRentalSystem{
 
             int choice = scanner.nextInt();
             scanner.nextLine(); 
+            if (choice == 1) {
+                System.out.println("\n== Rent a Car ==\n");
+                System.out.print("Enter your name: ");
+                String customerName = scanner.nextLine();
+
+                System.out.println("\nAvailable Cars:");
+                for (Car car : cars) {
+                    if (car.isAvailable()) {
+                        System.out.println(car.getCarId() + " - " + car.getBrand() + " " + car.getModel());
+                    }
+                }
+
+                System.out.print("\nEnter the car ID you want to rent: ");
+                String carId = scanner.nextLine();
+
+                System.out.print("Enter the number of days for rental: ");
+                int rentalDays = scanner.nextInt();
+                scanner.nextLine();
+                 Customer newCustomer = new Customer("CUS" + (customers.size() + 1), customerName);
+                addCustomer(newCustomer);
+
+                Car selectedCar = null;
+                for (Car car : cars) {
+                    if (car.getCarId().equals(carId) && car.isAvailable()) {
+                        selectedCar = car;
+                        break;
+                    }
+                }
 
            
