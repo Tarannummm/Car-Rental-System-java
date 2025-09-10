@@ -176,5 +176,37 @@ class CarRentalSystem{
                     System.out.println("\nInvalid car selection or car not available for rent.");
                 }
             }
+            else if (choice == 2) {
+                System.out.println("\n== Return a Car ==\n");
+                System.out.print("Enter the car ID you want to return: ");
+                String carId = scanner.nextLine();
+
+                Car carToReturn = null;
+                for (Car car : cars) {
+                    if (car.getCarId().equals(carId) && !car.isAvailable()) {
+                        carToReturn = car;
+                        break;
+                    }
+                }
+
+                if (carToReturn != null) {
+                    Customer customer = null;
+                    for (Rental rental : rentals) {
+                        if (rental.getCar() == carToReturn) {
+                            customer = rental.getCustomer();
+                            break;
+                        }
+                    }
+
+                    if (customer != null) {
+                        returnCar(carToReturn);
+                        System.out.println("Car returned successfully by " + customer.getName());
+                    } else {
+                        System.out.println("Car was not rented or rental information is missing.");
+                    }
+                } else {
+                    System.out.println("Invalid car ID or car is not rented.");
+                }
+            } 
 
            
