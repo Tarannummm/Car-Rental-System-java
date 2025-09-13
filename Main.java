@@ -229,11 +229,13 @@ public class Main{
         Car car3 = new Car("C003", "Mahindra", "Thar", 150.0);
         Car car4 = new Car("C004", "Toyota", "Allion", 200.0);
         Car car5 = new Car("C005", "Nissan", "X Trail", 250.0);
+         Car car6 = new Car("C006", "Nissan", "gtr", 260.0);
         rentalSystem.addCar(car1);
         rentalSystem.addCar(car2);
         rentalSystem.addCar(car3);
         rentalSystem.addCar(car4);
         rentalSystem.addCar(car5);
+        rentalSystem.addCar(car6);
 
         rentalSystem.menu();
     }
