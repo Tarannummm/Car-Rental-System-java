@@ -215,7 +215,7 @@ class CarRentalSystem{
             }
         }
 
-        System.out.println("\nThank you for using the Car Rental System!");
+        System.out.println("\nThank you for choosing the Car Rental System!");
     }
 
 }
